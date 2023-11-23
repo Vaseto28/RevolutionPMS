@@ -116,8 +116,8 @@ td {
 }
 
 .center {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: revert;
+    margin-right: 300px;
 }
 
 /*reservation styles*/

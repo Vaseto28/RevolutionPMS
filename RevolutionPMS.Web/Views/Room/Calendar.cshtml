@@ -92,14 +92,6 @@
                 @DateTime.UtcNow.Date.AddDays(20).ToString("dd.MM")
                 @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(20).DayOfWeek)
             </td>
-            <td>
-                @DateTime.UtcNow.Date.AddDays(21).ToString("dd.MM")
-                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(21).DayOfWeek)
-            </td>
-            <td>
-                @DateTime.UtcNow.Date.AddDays(22).ToString("dd.MM")
-                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(22).DayOfWeek)
-            </td>
         </tr>
         @for (int i = 1; i <= 15; i++)
         {
