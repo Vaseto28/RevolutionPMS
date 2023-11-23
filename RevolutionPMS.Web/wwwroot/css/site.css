@@ -115,11 +115,6 @@ td {
     padding-right: 15px;
 }
 
-.center {
-    margin-left: revert;
-    margin-right: 300px;
-}
-
 /*reservation styles*/
 .reservation{
     background-color: green;
