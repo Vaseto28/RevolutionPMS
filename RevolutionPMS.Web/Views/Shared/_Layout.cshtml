@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revolution PMS</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RevolutionPMS.Web.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                
+                <div class="navbar">
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            Menu
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a asp-controller="Room" asp-action="Calendar">Room calendar</a>
+                            <a asp-controller="Home" asp-action="Index">Link 2</a>
+                            <a asp-controller="Home" asp-action="Index">Link 3</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-left: 10px;" class="layout-anchor">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Revolution PMS</a>
+                </div>
+
+                <div style="margin-left: 1000px;" class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy;
+            @if (ReleaseYear == DateTime.UtcNow.Year)
+            {
+                @Html.Raw($"{ReleaseYear}");
+            }
+            else
+            {
+                @Html.Raw($"{ReleaseYear} - {DateTime.UtcNow.Year}");
+            }
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

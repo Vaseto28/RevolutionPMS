@@ -1,0 +1,122 @@
+﻿<body>
+    <table class="center">
+        <tr>
+            <td>
+                <select>
+                    <option>Villa</option>
+                    <option>DB Room</option>
+                    <option>Single room</option>
+                </select>
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(1).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(1).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(2).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(2).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(3).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(3).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(4).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(4).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(5).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(5).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(6).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(6).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(7).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(7).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(8).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(8).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(9).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(9).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(10).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(10).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(11).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(11).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(12).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(12).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(13).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(13).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(14).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(14).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(15).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(15).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(16).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(16).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(17).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(17).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(18).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(18).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(19).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(19).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(20).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(20).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(21).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(21).DayOfWeek)
+            </td>
+            <td>
+                @DateTime.UtcNow.Date.AddDays(22).ToString("dd.MM")
+                @CutTheDayOfWeekName(DateTime.UtcNow.AddDays(22).DayOfWeek)
+            </td>
+        </tr>
+        @for (int i = 1; i <= 15; i++)
+        {
+            <partial value="@i" name="_RoomPartial" />
+        }
+    </table>
+</body>
+
+@{
+    static string CutTheDayOfWeekName(DayOfWeek dayOfWeek)
+    {
+        StringBuilder output = new StringBuilder();
+        for (int i = 0; i < 3; i++)
+        {
+            output.Append(dayOfWeek.ToString()[i]);
+        }
+
+        return output.ToString().TrimEnd();
+    }
+}

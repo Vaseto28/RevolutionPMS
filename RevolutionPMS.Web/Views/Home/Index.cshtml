@@ -1,0 +1,167 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" src="~/css/styles.css" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+
+<body>
+    <div>
+        <div class="row">
+            <div class="col">
+                <div class="two alt-two">
+                    <h1>Departures</h1>
+                    <br />
+                </div>
+                <canvas id="departures"></canvas>
+            </div>
+            <div class="col">
+                <div class="two alt-two">
+                    <h1>Arrivals</h1>
+                    <br />
+                </div>
+                <canvas id="arrivals"></canvas>
+            </div>
+            <div class="col">
+                <div class="two alt-two">
+                    <h1>Guests in hotel</h1>
+                    <br />
+                </div>
+                <canvas id="guestsInHotel"></canvas>
+            </div>
+        </div>
+        <p></p>
+        <div class="row">
+            <div class="col">
+                <div class="two alt-two">
+                    <h1>Occupancy</h1>
+                    <br />
+                </div>
+                <canvas id="occupancy"></canvas>
+            </div>
+            <div class="col">
+                <div class="two alt-two">
+                    <h1>Incomes</h1>
+                    <br />
+                </div>
+                <canvas id="incomes"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>var xValues = ["Departured", "Waiting"];
+    var yValues = [11, 7];
+    var barColors = [
+        "#b91d47",
+        "#00aba9"
+    ];
+
+    new Chart("departures", {
+        type: "pie",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        }
+    });</script>
+
+<script>var xValues = ["Arrived", "Expected"];
+    var yValues = [3, 8];
+    var barColors = [
+        "#b91d47",
+        "#00aba9"
+    ];
+
+    new Chart("arrivals", {
+        type: "pie",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        }
+    });</script>
+
+<script>var xValues = ["Adults", "Children (0 - 4,99)", "Children (5 - 12,99)"];
+    var yValues = [55, 49, 44];
+    var barColors = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797"
+    ];
+
+    new Chart("guestsInHotel", {
+        type: "pie",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        }
+    });</script>
+
+<script>var xValues = ["@DateTime.Today.ToString("dd.MM.yyyy")", "@DateTime.Today.AddDays(1).ToString("dd.MM.yyyy")", "@DateTime.Today.AddDays(2).ToString("dd.MM.yyyy")", "@DateTime.Today.AddDays(3).ToString("dd.MM.yyyy")", "@DateTime.Today.AddDays(4).ToString("dd.MM.yyyy")"];
+    var yValues = [17, 36, 20, 49, 22];
+
+    new Chart("occupancy", {
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [{
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "rgba(204,0,102, 0.4)",
+                borderColor: "rgba(102,0,51, 1.0)",
+                data: yValues
+            }]
+        },
+        options: {
+            legend: { display: false },
+            scales: {
+                yAxes: [{ ticks: { min: 0, max: 60 } }],
+            }
+        }
+    });</script>
+
+<script>
+    var xValues = ["@DateTime.Today.ToString("dd.MM.yyyy")", "@DateTime.Today.AddDays(1).ToString("dd.MM.yyyy")", "@DateTime.Today.AddDays(2).ToString("dd.MM.yyyy")", "@DateTime.Today.AddDays(3).ToString("dd.MM.yyyy")", "@DateTime.Today.AddDays(4).ToString("dd.MM.yyyy")"];
+
+    new Chart("incomes", {
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [{
+                    fill: false,
+                    label: "Bank transfer (BGN)",
+                    lineTension: 0.1,
+                    borderColor: "rgba(0,0,0, 1.0)",
+                    data: [100, 569, 235.98, 1000, 300]
+                },
+                {
+                    fill: false,
+                    label: "Credit card (BGN)",
+                    lineTension: 0.1,
+                    borderColor: "rgba(100,100,100, 1.0)",
+                    data: [1222, 88, 900, 632, 100]
+                },
+                {
+                    fill: false,
+                    label: "Cash (BGN)",
+                    lineTension: 0.1,
+                    borderColor: "rgba(200,200,200, 1.0)",
+                    data: [100, 876.78, 960.54, 102, 303.78]
+                }]
+        },
+        options: {
+            legend: { display: true
+            },
+            scales: {
+                yAxes: [{ ticks: { min: 0, max: 1400 } }],
+            }
+        }
+    });
+</script>
