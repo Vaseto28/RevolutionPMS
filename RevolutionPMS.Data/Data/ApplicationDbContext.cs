@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace RevolutionPMS.Web.Data;
+namespace RevolutionPMS.Data;
 
 public class ApplicationDbContext : IdentityDbContext
 {
@@ -10,4 +10,3 @@ public class ApplicationDbContext : IdentityDbContext
     {
     }
 }
-
