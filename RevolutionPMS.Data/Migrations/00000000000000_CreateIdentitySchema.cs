@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace RevolutionPMS.Web.Data.Migrations
+namespace RevolutionPMS.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {
