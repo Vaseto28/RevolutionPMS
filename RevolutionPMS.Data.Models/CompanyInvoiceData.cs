@@ -1,51 +1,55 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using static RevolutionPMS.Common.EntitiesValidationsAndConstraints.CompanyInvoiceData;
 
-namespace RevolutionPMS.Data.Models.DataModels;
+namespace RevolutionPMS.Data.Models;
 
 public class CompanyInvoiceData
 {
 	public CompanyInvoiceData()
 	{
 		this.Id = Guid.NewGuid();
+		this.Properties = new HashSet<Property>();
 	}
 
 	[Key]
 	public Guid Id { get; set; }
 
 	[Required]
-	[MaxLength(60, ErrorMessage = "The company name is too long!")]
+	[MaxLength(NameMaxLength, ErrorMessage = NameTooLongErrorMessage)]
 	public string Name { get; set; } = null!;
 
 	[Required]
-	[MaxLength(11, ErrorMessage = "Invalid VAT number!")]
+	[MaxLength(VATRequiredLength, ErrorMessage = VATIncorrectLengthErrorMessage)]
 	public string VATNumber { get; set; } = null!;
 
 	[Required]
-	[MaxLength(9, ErrorMessage = "Invalid Bulstat / EIC!")]
+	[MaxLength(BulstatRequiredLength, ErrorMessage = BulstatIncorrectLengthErrorMessage)]
 	public string Bulstat { get; set; } = null!;
 
 	[Required]
-    [MaxLength(30, ErrorMessage = "The address is too long!")]
+    [MaxLength(CountryMaxLength, ErrorMessage = CountryTooLongErrorMessage)]
     public string Country { get; set; } = null!;
 
 	[Required]
-	[MaxLength(100, ErrorMessage = "The address is too long!")]
+	[MaxLength(AddressMaxLength, ErrorMessage = AddressTooLongErrorMessage)]
 	public string Address { get; set; } = null!;
 
 	[Required]
-	[MaxLength(50, ErrorMessage = "The city name is too long!")]
+	[MaxLength(CityMaxLength, ErrorMessage = CityTooLongErrorMessage)]
 	public string City { get; set; } = null!;
 
     [Required]
-    [MaxLength(50, ErrorMessage = "The city name is too long!")]
+    [MaxLength(RegionMaxLength, ErrorMessage = RegionTooLongErrorMessage)]
     public string Region { get; set; } = null!;
 
 	[Required]
-	[MaxLength(4, ErrorMessage = "Invalid post code!")]
+	[MaxLength(PostCodeRequiredLength, ErrorMessage = PostCodeIncorrectLengthErrorMessage)]
 	public string PostCode { get; set; } = null!;
 
 	[Required]
-	[MaxLength(40, ErrorMessage = "The name of the accountable person is too long!. Fill in only first and last name.")]
+	[MaxLength(AccountablePersonNameMaxLength, ErrorMessage = AccountablePersonNameTooLongErrorMessage)]
 	public string AccountablePerson { get; set; } = null!;
+
+	public virtual ICollection<Property> Properties { get; set; } = null!;
 }
 
