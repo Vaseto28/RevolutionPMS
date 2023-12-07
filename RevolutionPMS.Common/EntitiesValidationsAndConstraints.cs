@@ -2,6 +2,72 @@
 
 public static class EntitiesValidationsAndConstraints
 {
+    public static class BillingTemplate
+    {
+        public const int NameMinLength = 3;
+        public const int NameMaxLength = 20;
+        public const string NameTooShortErrorMessage = "The chosen name is too short!";
+        public const string NameTooLongErrorMessage = "The chosen name is too long!";
+    }
+
+    public static class Board
+    {
+        public const int NameMinLength = 2;
+        public const int NameMaxLength = 10;
+        public const string NameTooShortErrorMessage = "The chosen name is too short!";
+        public const string NameTooLongErrorMessage = "The chosen name is too long!";
+    }
+
+    public static class TaxSettings
+    {
+        public const int NameMinLength = 2;
+        public const int NameMaxLength = 5;
+        public const string NameTooShortErrorMessage = "The chosen name is too short!";
+        public const string NameTooLongErrorMessage = "The chosen name is too long!";
+    }
+
+    public static class Currency
+    {
+        public const int NameMinLength = 2;
+        public const int NameMaxLength = 10;
+        public const string NameTooShortErrorMessage = "The chosen name is too short!";
+        public const string NameTooLongErrorMessage = "The chosen name is too long!";
+    }
+
+    public static class HouseholdTask
+    {
+        public const int NameMinLength = 3;
+        public const int NameMaxLength = 15;
+        public const string NameTooShortErrorMessage = "The chosen name is too short!";
+        public const string NameTooLongErrorMessage = "The chosen name is too long!";
+
+        public const int DescriptionMinLength = 3;
+        public const int DescriptionMaxLength = 70;
+        public const string DescriptionTooShortErrorMessage = "The description is too short!";
+        public const string DescriptionTooLongErrorMessage = "The description is too long!";
+    }
+
+    public static class Issue
+    {
+        public const int NameMinLength = 3;
+        public const int NameMaxLength = 15;
+        public const string NameTooShortErrorMessage = "The chosen name is too short!";
+        public const string NameTooLongErrorMessage = "The chosen name is too long!";
+
+        public const int DescriptionMinLength = 3;
+        public const int DescriptionMaxLength = 70;
+        public const string DescriptionTooShortErrorMessage = "The description is too short!";
+        public const string DescriptionTooLongErrorMessage = "The description is too long!";
+    }
+
+    public static class Room
+    {
+        public const int DescriptionMinLength = 3;
+        public const int DescriptionMaxLength = 70;
+        public const string DescriptionTooShortErrorMessage = "The description is too short!";
+        public const string DescriptionTooLongErrorMessage = "The description is too long!";
+    }
+
     public static class RoomType
     {
         public const int NameMinLength = 3;
