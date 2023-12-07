@@ -8,6 +8,8 @@ public class Property
 	public Property()
 	{
 		this.Id = Guid.NewGuid();
+
+		this.Rooms = new HashSet<Room>();
 	}
 
 	[Key]
@@ -34,8 +36,10 @@ public class Property
 	public virtual PropertyType PropertyType { get; set; } = null!;
 
 	[Required]
-	public Guid CompanyInvoiceDataId { get; set; }
+	public Guid CompanyId { get; set; }
 
-	public virtual CompanyInvoiceData CompanyInvoiceData { get; set; } = null!;
+	public virtual Company Company { get; set; } = null!;
+
+	public virtual ICollection<Room> Rooms { get; set; } = null!;
 }
 
