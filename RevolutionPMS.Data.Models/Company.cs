@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using static RevolutionPMS.Common.EntitiesValidationsAndConstraints.CompanyInvoiceData;
+using static RevolutionPMS.Common.EntitiesValidationsAndConstraints.Company;
 
 namespace RevolutionPMS.Data.Models;
 
