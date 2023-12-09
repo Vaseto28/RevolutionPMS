@@ -16,6 +16,10 @@ public class Room
 	[MaxLength(DescriptionMaxLength, ErrorMessage = DescriptionTooLongErrorMessage)]
 	public string Description { get; set; } = null!;
 
+	public int RoomTypeId { get; set; }
+
+	public virtual RoomType RoomType { get; set; } = null!;
+
 	public Guid PropertyId { get; set; }
 
 	public virtual Property Property { get; set; } = null!;
