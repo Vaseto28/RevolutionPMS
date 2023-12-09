@@ -92,7 +92,7 @@ public static class EntitiesValidationsAndConstraints
         public const string LocationTooLongErrorMessage = "The name of the location is too long!";
     }
 
-    public static class CompanyInvoiceData
+    public static class Company
     {
         public const int NameMinLength = 3;
         public const int NameMaxLength = 60;
@@ -102,7 +102,7 @@ public static class EntitiesValidationsAndConstraints
         public const int VATRequiredLength = 11;
         public const string VATIncorrectLengthErrorMessage = "The VAT of the company is incorrect!";
 
-        public const int BulstatRequiredLength = 11;
+        public const int BulstatRequiredLength = 9;
         public const string BulstatIncorrectLengthErrorMessage = "The bulstat of the company is incorrect!";
 
         public const int CountryMinLength = 3;
