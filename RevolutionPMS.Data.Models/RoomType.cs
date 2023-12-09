@@ -5,8 +5,13 @@ namespace RevolutionPMS.Data.Models;
 
 public class RoomType
 {
+	public RoomType()
+	{
+		this.Rooms = new HashSet<Room>();
+	}
+
 	[Key]
-	public Guid Id { get; set; }
+	public int Id { get; init; }
 
 	[Required]
 	[MaxLength(NameMaxLength, ErrorMessage = NameTooLongErrorMessage)]
@@ -14,5 +19,7 @@ public class RoomType
 
 	[Required]
 	public int BedsCount { get; set; }
+
+	public virtual ICollection<Room> Rooms { get; set; } = null!;
 }
 
