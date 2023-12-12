@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using RevolutionPMS.Web.Models;
+using RevolutionPMS.Web.ViewModels;
 
 namespace RevolutionPMS.Web.Controllers;
 
