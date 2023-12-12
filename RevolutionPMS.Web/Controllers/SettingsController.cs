@@ -8,6 +8,11 @@ namespace RevolutionPMS.Web.Controllers
         {
             return View();
         }
+
+        public IActionResult PropertyTypes()
+        {
+            return View();
+        }
     }
 }
 
