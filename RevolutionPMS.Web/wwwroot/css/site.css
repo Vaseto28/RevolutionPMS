@@ -63,6 +63,8 @@ body {
     color: #111;
 }
 
+
+
 /*nav menu css*/
 .dropbtn {
     background-color: #570000;
@@ -115,7 +117,19 @@ td {
     padding-right: 15px;
 }
 
-/*reservation styles*/
-.reservation{
-    background-color: green;
+.navbar {
+    background-color: #4285f4; /* Google Blue */
+    color: #ffffff; /* White text color */
+    padding: 10px;
+}
+
+/* Styling for buttons */
+.btn {
+    background-color: #4caf50; /* Green */
+    color: #ffffff; /* White text color */
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
 }
