@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Contracts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RevolutionPMS.ViewModels\RevolutionPMS.Web.ViewModels.csproj" />
+    <ProjectReference Include="..\RevolutionPMS.Data\RevolutionPMS.Data.csproj" />
+    <ProjectReference Include="..\RevolutionPMS.Data.Models\RevolutionPMS.Data.Models.csproj" />
+  </ItemGroup>
+</Project>
