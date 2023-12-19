@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RevolutionPMS.Data;
+using RevolutionPMS.Services.Contracts;
+using RevolutionPMS.Infrastructure;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +24,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
     options.Password.RequiredLength = builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
 })
 .AddEntityFrameworkStores<RevolutionPMSDbContext>();
+
+builder.Services.AddApplicationServices(typeof(ISettingsService));
 
 builder.Services.AddControllersWithViews();
 
