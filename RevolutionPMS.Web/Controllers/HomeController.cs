@@ -1,11 +1,13 @@
 ﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RevolutionPMS.Web.ViewModels;
 
 namespace RevolutionPMS.Web.Controllers;
 
-public class HomeController : Controller
+public class HomeController : BaseController
 {
+    [AllowAnonymous]
     public IActionResult Index()
     {
         return View();
