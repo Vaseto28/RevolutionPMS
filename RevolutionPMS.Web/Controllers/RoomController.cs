@@ -2,7 +2,7 @@
 
 namespace RevolutionPMS.Web.Controllers
 {
-    public class RoomController : Controller
+    public class RoomController : BaseController
     {
         public IActionResult Calendar()
         {
