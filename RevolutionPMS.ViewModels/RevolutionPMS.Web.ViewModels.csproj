@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="SettingsModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SettingsModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RevolutionPMS.Common\RevolutionPMS.Common.csproj" />
+  </ItemGroup>
 </Project>
