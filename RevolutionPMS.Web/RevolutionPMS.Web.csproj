@@ -19,6 +19,12 @@
     <ProjectReference Include="..\RevolutionPMS.ViewModels\RevolutionPMS.Web.ViewModels.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\RevolutionPMS.Services\RevolutionPMS.Services.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\RevolutionPMS.Infrastructure\RevolutionPMS.Infrastructure.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\Room\" />
