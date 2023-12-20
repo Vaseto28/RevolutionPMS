@@ -40,6 +40,8 @@ public class RevolutionPMSDbContext : IdentityDbContext
 
     public DbSet<BillingTemplatesBoards> BillingTemplatesBoards { get; set; } = null!;
 
+    public DbSet<AccommodationType> AccommodationTypes { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder.UseLazyLoadingProxies());
