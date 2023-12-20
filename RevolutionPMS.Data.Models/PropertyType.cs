@@ -12,6 +12,11 @@ public class PropertyType
 	[MaxLength(NameMaxLength, ErrorMessage = NameTooLongErrorMessage)]
 	public string Name { get; set; } = null!;
 
+	public int AccommodationTypeId { get; set; }
+
+	[Required]
+	public virtual AccommodationType AccommodationType { get; set; } = null!;
+
 	public virtual ICollection<Property> Properties { get; set; } = null!;
 }
 
