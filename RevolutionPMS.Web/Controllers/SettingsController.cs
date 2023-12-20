@@ -19,11 +19,33 @@ namespace RevolutionPMS.Web.Controllers
         }
 
         [HttpGet]
+        public IActionResult AccommodationTypes()
+        {
+            AccommodationTypeViewModel model = new AccommodationTypeViewModel();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AccommodationTypes(AccommodationTypeViewModel model)
+        {
+            if (string.IsNullOrWhiteSpace(model.Name))
+            {
+                return RedirectToAction("Error", "Home");
+            }
+
+            await this.settingsService.AddAccommodationTypeAsync(model);
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
         public async Task<IActionResult> PropertyTypes()
         {
             PropertyTypeViewModel propertyTypeViewModel = new PropertyTypeViewModel()
             {
-                PropertyTypes = await this.settingsService.GetAllPropertyTypesAsync()
+                PropertyTypes = await this.settingsService.GetAllPropertyTypesAsync(),
+                AccommodationTypeViewModels = await this.settingsService.GetAllAccommodationTypesAsync()
             };
 
             return View(propertyTypeViewModel);
@@ -32,6 +54,11 @@ namespace RevolutionPMS.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> PropertyTypes(PropertyTypeViewModel model)
         {
+            if (string.IsNullOrWhiteSpace(model.Name))
+            {
+                return RedirectToAction("Error", "Home");
+            }
+
             await this.settingsService.AddPropertyTypeAsync(model);
 
             return RedirectToAction("Index", "Home");
