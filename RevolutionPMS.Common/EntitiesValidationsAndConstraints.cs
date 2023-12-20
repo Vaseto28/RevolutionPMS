@@ -2,6 +2,14 @@
 
 public static class EntitiesValidationsAndConstraints
 {
+    public static class AccommodationType
+    {
+        public const int NameMinLength = 3;
+        public const int NameMaxLength = 20;
+        public const string NameTooShortErrorMessage = "The chosen name is too short!";
+        public const string NameTooLongErrorMessage = "The chosen name is too long!";
+    }
+
     public static class BillingTemplate
     {
         public const int NameMinLength = 3;
