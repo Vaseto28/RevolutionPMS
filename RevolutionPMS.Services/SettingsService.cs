@@ -15,6 +15,17 @@ public class SettingsService : ISettingsService
         this.dbCtx = dbCtx;
     }
 
+    public async Task AddAccommodationTypeAsync(AccommodationTypeViewModel model)
+    {
+        AccommodationType accommodationType = new AccommodationType()
+        {
+            Name = model.Name
+        };
+
+        await this.dbCtx.AccommodationTypes.AddAsync(accommodationType);
+        await this.dbCtx.SaveChangesAsync();
+    }
+
     public async Task AddPropertyTypeAsync(PropertyTypeViewModel model)
     {
         PropertyType propertyType = new PropertyType()
@@ -22,10 +33,18 @@ public class SettingsService : ISettingsService
             Name = model.Name
         };
 
-        await this.dbCtx.PropertyTypes
-            .AddAsync(propertyType);
-
+        await this.dbCtx.PropertyTypes.AddAsync(propertyType);
         await this.dbCtx.SaveChangesAsync();
+    }
+
+    public async Task<ICollection<AccommodationTypeViewModel>> GetAllAccommodationTypesAsync()
+    {
+        return await this.dbCtx.AccommodationTypes
+            .Select(x => new AccommodationTypeViewModel()
+            {
+                Name = x.Name
+            })
+            .ToArrayAsync();
     }
 
     public async Task<ICollection<PropertyTypeViewModel>> GetAllPropertyTypesAsync()

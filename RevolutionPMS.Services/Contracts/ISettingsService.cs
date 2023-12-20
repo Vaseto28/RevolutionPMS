@@ -7,5 +7,9 @@ public interface ISettingsService
     Task<ICollection<PropertyTypeViewModel>> GetAllPropertyTypesAsync();
 
     Task AddPropertyTypeAsync(PropertyTypeViewModel model);
+
+    Task AddAccommodationTypeAsync(AccommodationTypeViewModel model);
+
+    Task<ICollection<AccommodationTypeViewModel>> GetAllAccommodationTypesAsync();
 }
 
